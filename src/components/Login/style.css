@@ -1,0 +1,12 @@
+.container-login {
+    background-color: #00929b;
+    width: 35rem;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
