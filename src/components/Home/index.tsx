@@ -1,3 +1,7 @@
+import { mainListItems, secondaryListItems } from '../ListItems/index';
+import Chart from '../Chart/index';
+import Deposits from '../Deposits/index';
+import Orders from '../Order/index';
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,10 +21,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from '../ListItems/index';
-import Chart from '../Chart/index';
-import Deposits from '../Deposits/index';
-import Orders from '../Order/index';
+import { color } from '@mui/system';
 
 function Copyright(props: any) {
   return (
@@ -61,26 +62,33 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
+    
+
+
     '& .MuiDrawer-paper': {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: drawerWidth,
-      transition: theme.transitions.create('width', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      boxSizing: 'border-box',
-      ...(!open && {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
-        },
-      }),
+      display: 'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+      // position: 'relative',
+      // whiteSpace: 'nowrap',
+      // width: drawerWidth,
+      // transition: theme.transitions.create('width', {
+      //   easing: theme.transitions.easing.sharp,
+      //   duration: theme.transitions.duration.enteringScreen,
+      // }),
+      // boxSizing: 'border-box',
+      // ...(!open && {
+      //   overflowX: 'hidden',
+      //   transition: theme.transitions.create('width', {
+      //     easing: theme.transitions.easing.sharp,
+      //     duration: theme.transitions.duration.leavingScreen,
+      //   }),
+      //   width: theme.spacing(7),
+      //   [theme.breakpoints.up('sm')]: {
+      //     width: theme.spacing(9),
+      //   },
+      // }),
     },
   }),
 );
@@ -88,7 +96,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -103,7 +111,7 @@ function DashboardContent() {
               pr: '24px', // keep right padding when drawer closed
             }}
           >
-            <IconButton
+            {/* <IconButton
               edge="start"
               color="inherit"
               aria-label="open drawer"
@@ -114,7 +122,7 @@ function DashboardContent() {
               }}
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Typography
               component="h1"
               variant="h6"
@@ -122,7 +130,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              To task
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -132,7 +140,7 @@ function DashboardContent() {
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
-          <Toolbar
+          {/* <Toolbar
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -140,15 +148,25 @@ function DashboardContent() {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
+            {/* <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          <List component="nav">
+            </IconButton> */}
+          {/* </Toolbar> */}
+          {/* <Divider /> */} 
+          <List component="nav"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            alignContent:'center',
+            gap:'10',
+          }
+          }
+          >
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {/* <Divider sx={{ my: 1 }} />
+            {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -165,37 +183,40 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+            <Grid container spacing={10}>
+              <Grid item  md={4} >
                 <Paper
                   sx={{
-                    p: 2,
+                    
                     display: 'flex',
                     flexDirection: 'column',
                     height: 240,
+                    minWidth: 350
                   }}
                 >
-                  <Chart />
+                  {/* <Chart /> */}
+                  TESTE
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              <Grid item md={4} >
                 <Paper
                   sx={{
-                    p: 2,
                     display: 'flex',
                     flexDirection: 'column',
                     height: 240,
+                    minWidth: 350
                   }}
                 >
-                  <Deposits />
+                  TESTE
+                  {/* <Deposits /> */}
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+              <Grid item md={4}>
+                <Paper 
+                sx={{display: 'flex', flexDirection: 'column', height: 240, minWidth: 350 }}
+                >
+                  {/* <Orders /> */}
+                  TESTE
                 </Paper>
               </Grid>
             </Grid>
