@@ -22,6 +22,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { color } from '@mui/system';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import { Card } from '@mui/material';
+import RecipeReviewCard from '../Card';
 
 function Copyright(props: any) {
   return (
@@ -70,6 +73,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center',
+    backgroundColor:'white',
+    border:'none',
+    marginLeft:'3%'
       // position: 'relative',
       // whiteSpace: 'nowrap',
       // width: drawerWidth,
@@ -103,9 +109,9 @@ function DashboardContent() {
 
   return (
     <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', maxHeight:'80vh'}}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar  open={open} sx={{height:'8vh', backgroundColor:'#00929B'}}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -139,7 +145,7 @@ function DashboardContent() {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} >
           {/* <Toolbar
             sx={{
               display: 'flex',
@@ -152,7 +158,8 @@ function DashboardContent() {
               <ChevronLeftIcon />
             </IconButton> */}
           {/* </Toolbar> */}
-          {/* <Divider /> */} 
+          {/* <Divider /> */}
+          <div style={{border:'1px solid black', borderRadius:'12px', backgroundColor:'#056E75'}}>
           <List component="nav"
           sx={{
             display: 'flex',
@@ -160,7 +167,8 @@ function DashboardContent() {
             alignItems: 'center',
             flexDirection: 'column',
             alignContent:'center',
-            gap:'10',
+            justifyItems:'center',
+            gap:'30',
           }
           }
           >
@@ -168,34 +176,100 @@ function DashboardContent() {
             {/* <Divider sx={{ my: 1 }} />
             {secondaryListItems} */}
           </List>
+          </div>
         </Drawer>
         <Box
           component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
+            // backgroundColor: (theme) =>
+            //   theme.palette.mode === 'light'
+            //     ? theme.palette.grey[100]
+            //     : theme.palette.grey[900],
+
             flexGrow: 1,
-            height: '100vh',
+            height: '100%',
             overflow: 'auto',
           }}
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={10}>
+            <Grid container spacing={7}>
+            <Grid item  md={4} ><Divider sx={{
+                    backgroundColor:'green'
+                  }}/><Paper
+                 sx={{
+                  padding:'3%',
+                  display: 'flex',
+                  maxHeight: 50,
+                  maxWidth: 350,
+                  justifyContent:'space-between'
+                }}
+                >
+                  <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
+                  Tarefa
+
+                  </div>
+                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
+                 <ControlPointIcon/>
+                  
+                  </div>
+                </Paper></Grid>
+                <Grid item  md={4} >
+                <Divider sx={{
+                    backgroundColor:'red'
+                  }}/><Paper
+                  sx={{
+                    padding:'3%',
+                    display: 'flex',
+                    maxHeight: 50,
+                    maxWidth: 350,
+                    justifyContent:'space-between'
+                  }}
+                >
+                  
+                   <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
+                  Lembrete
+
+                  </div>
+                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
+                 <ControlPointIcon/>
+                  
+                  </div>
+                </Paper></Grid>
+                <Grid item  md={4} ><Divider sx={{
+                    backgroundColor:'purple'
+                  }}/><Paper
+                  sx={{
+                    padding:'3%',
+                    display: 'flex',
+                    maxHeight: 50,
+                    maxWidth: 350,
+                    justifyContent:'space-between'
+                  }}
+                >
+                  <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
+                  Evento
+
+                  </div>
+                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
+                 <ControlPointIcon/>
+                  
+                  </div>
+                </Paper></Grid>
               <Grid item  md={4} >
                 <Paper
                   sx={{
                     
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    minHeight: 240,
                     minWidth: 350
                   }}
                 >
                   {/* <Chart /> */}
-                  TESTE
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
                 </Paper>
               </Grid>
               <Grid item md={4} >
@@ -203,20 +277,27 @@ function DashboardContent() {
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    minHeight: 240,
                     minWidth: 350
                   }}
                 >
-                  TESTE
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
                   {/* <Deposits /> */}
                 </Paper>
               </Grid>
               <Grid item md={4}>
                 <Paper 
-                sx={{display: 'flex', flexDirection: 'column', height: 240, minWidth: 350 }}
+                sx={{display: 'flex', flexDirection: 'column', minHeight: 240, minWidth: 350 }}
                 >
                   {/* <Orders /> */}
-                  TESTE
+                  <RecipeReviewCard/>
+                  <RecipeReviewCard/>
                 </Paper>
               </Grid>
             </Grid>

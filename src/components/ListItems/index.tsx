@@ -12,36 +12,40 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 
 export const mainListItems = (
   <React.Fragment>
+    <div style={{display:'flex', flexDirection:'column', gap:'5vh'}}>
     <ListItemButton>
-      <ListItemIcon>
         <DashboardIcon />
-      </ListItemIcon>
       <ListItemText />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+        <DashboardIcon />
+      <ListItemText />
+    </ListItemButton>
+    <ListItemButton>
+      {/* <ListItemIcon> */}
         <ShoppingCartIcon />
-      </ListItemIcon>
+      {/* </ListItemIcon> */}
       <ListItemText  />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+      {/* <ListItemIcon> */}
         <PeopleIcon />
-      </ListItemIcon>
+      {/* </ListItemIcon> */}
       <ListItemText />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+      {/* <ListItemIcon> */}
         <BarChartIcon />
-      </ListItemIcon>
+      {/* </ListItemIcon> */}
       <ListItemText  />
     </ListItemButton>
     <ListItemButton>
-      <ListItemIcon>
+      {/* <ListItemIcon> */}
         <LayersIcon />
-      </ListItemIcon>
+      {/* </ListItemIcon> */}
       <ListItemText/>
     </ListItemButton>
+    </div>
   </React.Fragment>
 );
 
