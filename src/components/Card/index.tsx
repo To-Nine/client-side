@@ -14,6 +14,10 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ContentPasteOutlinedIcon from '@mui/icons-material/ContentPasteOutlined';
+import { CardProps } from './type';
+import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -29,20 +33,33 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props: CardProps) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const DinamicAvatar= () => {
+    if (props.type ==='evento') {return (<Avatar sx={{ bgcolor: 'purple' }} aria-label="recipe">
+    <CalendarMonthOutlinedIcon/>
+  </Avatar>)}
+    if (props.type === 'lembrete') {return (<Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
+    <NotificationsActiveOutlinedIcon/>
+  </Avatar>)}
+    if (props.type === 'tarefa') {return (<Avatar sx={{ bgcolor: 'green' }} aria-label="recipe">
+    <ContentPasteOutlinedIcon/>
+  </Avatar>)}
+    return (<></>)
+  }
   return (
     <div style={{margin: '10%'}}>
     <Card sx={{ maxWidth: 345}}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            <ContentPasteOutlinedIcon/>
-          </Avatar>
+          // <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          //   <ContentPasteOutlinedIcon/>
+          // </Avatar>
+          <DinamicAvatar/>
         }
         action={
           <IconButton aria-label="settings">

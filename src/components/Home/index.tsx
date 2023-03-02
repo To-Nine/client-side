@@ -25,7 +25,9 @@ import { color } from '@mui/system';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { Card } from '@mui/material';
 import RecipeReviewCard from '../Card/index';
-import Logo from '../../assets/image/logo.png'
+import Logo from '../../assets/image/logo.png';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import Avatar from '@mui/material/Avatar';
 
 function Copyright(props: any) {
   return (
@@ -109,7 +111,7 @@ function DashboardContent() {
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <ThemeProvider theme={mdTheme} >
       <Box sx={{ display: 'flex', maxHeight:'80vh'}}>
         <CssBaseline />
         <AppBar  open={open} sx={{height:'8vh', backgroundColor:'#00929B'}}>
@@ -137,6 +139,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
+              <img src={Logo}/>
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -196,7 +199,8 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={7}>
             <Grid item  md={4} ><Divider sx={{
-                    backgroundColor:'green'
+                    backgroundColor:'green',
+                    borderBottomWidth: 3
                   }}/><Paper
                  sx={{
                   padding:'3%',
@@ -217,7 +221,8 @@ function DashboardContent() {
                 </Paper></Grid>
                 <Grid item  md={4} >
                 <Divider sx={{
-                    backgroundColor:'red'
+                    backgroundColor:'red',
+                    borderBottomWidth: 3
                   }}/><Paper
                   sx={{
                     padding:'3%',
@@ -238,7 +243,9 @@ function DashboardContent() {
                   </div>
                 </Paper></Grid>
                 <Grid item  md={4} ><Divider sx={{
-                    backgroundColor:'purple'
+                    backgroundColor:'purple',
+                    borderBottomWidth: 3,
+                    
                   }}/><Paper
                   sx={{
                     padding:'3%',
@@ -268,9 +275,8 @@ function DashboardContent() {
                   }}
                 >
                   {/* <Chart /> */}
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
+                  <RecipeReviewCard type='tarefa'/>
+                  
                 </Paper>
               </Grid>
               <Grid item md={4} >
@@ -282,30 +288,31 @@ function DashboardContent() {
                     minWidth: 350
                   }}
                 >
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
+                 <RecipeReviewCard type='lembrete'/>
                   {/* <Deposits /> */}
                 </Paper>
               </Grid>
               <Grid item md={4}>
-                <Paper 
+                {/* <Paper 
                 sx={{display: 'flex', flexDirection: 'column', minHeight: 240, minWidth: 350 }}
-                >
+                > */}
                   {/* <Orders /> */}
-                  <RecipeReviewCard/>
-                  <RecipeReviewCard/>
-                </Paper>
+                  <RecipeReviewCard type='evento'/>
+                  <RecipeReviewCard type='evento'/>
+                {/* </Paper> */}
               </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
+          
         </Box>
+        
       </Box>
+      <div style={{ display:'flex', justifyContent:'flex-end', position:'fixed',right: '5%' }}>
+            <Avatar sx={{ bgcolor: 'grey', scale:'1.3'}}  aria-label="recipe">
+              <QuestionMarkIcon/>
+            </Avatar>
+      </div>
     </ThemeProvider>
   );
 }
