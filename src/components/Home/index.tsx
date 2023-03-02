@@ -24,7 +24,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { color } from '@mui/system';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { Card } from '@mui/material';
-import RecipeReviewCard from '../Card';
+import RecipeReviewCard from '../Card/index';
+import Logo from '../../assets/image/logo.png'
 
 function Copyright(props: any) {
   return (
@@ -136,7 +137,6 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              To task
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -169,6 +169,7 @@ function DashboardContent() {
             alignContent:'center',
             justifyItems:'center',
             gap:'30',
+
           }
           }
           >
