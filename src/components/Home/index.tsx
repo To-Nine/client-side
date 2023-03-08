@@ -28,6 +28,7 @@ import RecipeReviewCard from '../Card/index';
 import Logo from '../../assets/image/logo.png';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import Avatar from '@mui/material/Avatar';
+import FormDialog from '../PopUp';
 
 function Copyright(props: any) {
   return (
@@ -196,11 +197,12 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 0, mb: 0 }}>
             <Grid container spacing={7}>
             <Grid item  md={4} ><Divider sx={{
                     backgroundColor:'green',
-                    borderBottomWidth: 3
+                    borderBottomWidth: 3,
+                    marginBottom:0,
                   }}/><Paper
                  sx={{
                   padding:'3%',
@@ -215,8 +217,7 @@ function DashboardContent() {
 
                   </div>
                   <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                 <ControlPointIcon/>
-                  
+                    <FormDialog icon={<ControlPointIcon/>}/>
                   </div>
                 </Paper></Grid>
                 <Grid item  md={4} >
@@ -238,8 +239,7 @@ function DashboardContent() {
 
                   </div>
                   <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                 <ControlPointIcon/>
-                  
+                 <FormDialog icon={<ControlPointIcon/>}/>
                   </div>
                 </Paper></Grid>
                 <Grid item  md={4} ><Divider sx={{
@@ -260,12 +260,12 @@ function DashboardContent() {
 
                   </div>
                   <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                 <ControlPointIcon/>
+                  <FormDialog icon={<ControlPointIcon/>}/>
                   
                   </div>
                 </Paper></Grid>
-              <Grid item  md={4} >
-                <Paper
+              <Grid item marginTop={0}  md={4} >
+                {/* <Paper
                   sx={{
                     
                     display: 'flex',
@@ -273,24 +273,24 @@ function DashboardContent() {
                     minHeight: 240,
                     minWidth: 350
                   }}
-                >
+                > */}
                   {/* <Chart /> */}
                   <RecipeReviewCard type='tarefa'/>
                   
-                </Paper>
+                {/* </Paper> */}
               </Grid>
               <Grid item md={4} >
-                <Paper
+                {/* <Paper
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: 240,
                     minWidth: 350
-                  }}
-                >
+                  }} */}
+                {/* > */}
                  <RecipeReviewCard type='lembrete'/>
                   {/* <Deposits /> */}
-                </Paper>
+                {/* </Paper> */}
               </Grid>
               <Grid item md={4}>
                 {/* <Paper 
