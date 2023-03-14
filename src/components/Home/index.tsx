@@ -275,8 +275,25 @@ function DashboardContent() {
                   }}
                 > */}
                   {/* <Chart /> */}
-                  <RecipeReviewCard type='tarefa'/>
-                  
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
                 {/* </Paper> */}
               </Grid>
               <Grid item md={4} >
@@ -288,7 +305,7 @@ function DashboardContent() {
                     minWidth: 350
                   }} */}
                 {/* > */}
-                 <RecipeReviewCard type='lembrete'/>
+                 <RecipeReviewCard type='lembrete' title="Levar o cachorro para passear" description="Levar o bob para passear"/>
                   {/* <Deposits /> */}
                 {/* </Paper> */}
               </Grid>
@@ -297,12 +314,11 @@ function DashboardContent() {
                 sx={{display: 'flex', flexDirection: 'column', minHeight: 240, minWidth: 350 }}
                 > */}
                   {/* <Orders /> */}
-                  <RecipeReviewCard type='evento'/>
-                  <RecipeReviewCard type='evento'/>
+                  <RecipeReviewCard type='evento' title="RockInRio" description=""/>
+                  <RecipeReviewCard type='evento' title="Culto evangélico" description="louvor e rock"/>
                 {/* </Paper> */}
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
           
         </Box>

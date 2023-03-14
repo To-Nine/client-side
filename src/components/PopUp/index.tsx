@@ -6,6 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { ButtonGroup, FormControl, Grid, InputLabel, MenuItem, Select, ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 export default function FormDialog(props: any) {
   const [open, setOpen] = React.useState(false);
@@ -24,6 +25,21 @@ export default function FormDialog(props: any) {
         {props.icon}
       </Button>
       <Dialog open={open} onClose={handleClose}>
+      <Grid item md={12} sx={{padding:'2%'}} >
+      <ToggleButtonGroup
+  color="primary"
+  value={""}
+  exclusive
+  onChange={undefined}
+  aria-label="Platform"
+  sx={{display:'flex', padding:'1%',justifyContent:'center', alignItems:'center'}}
+
+>
+  <ToggleButton value="web">Web</ToggleButton>
+  <ToggleButton value="android">Android</ToggleButton>
+  <ToggleButton value="ios">iOS</ToggleButton>
+</ToggleButtonGroup>
+      </Grid>
         <DialogTitle>Subscribe</DialogTitle>
         <DialogContent>
           <DialogContentText>

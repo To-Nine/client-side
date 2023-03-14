@@ -66,7 +66,7 @@ export default function RecipeReviewCard(props: CardProps) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Levar a criança na escola"
+        title={props.title}
         // subheader="nomzykush@gmail.com"
       />
       {/* <CardContent>
@@ -74,27 +74,24 @@ export default function RecipeReviewCard(props: CardProps) {
             Esse vai ser a descrição
         </Typography>
       </CardContent> */}
-      <CardActions disableSpacing>
-        {/* <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton> */}
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
+      
+       {props.description === "" || props.description === undefined || props.description === null ? <></> :
+       <>
+       <CardActions disableSpacing>
+       <ExpandMore
+         expand={expanded}
+         onClick={handleExpandClick}
+         aria-expanded={expanded}
+         aria-label="show more"
+       >
+         <ExpandMoreIcon />
+       </ExpandMore>
+     </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           {/* <Typography paragraph>Chevrolet Description</Typography> */}
           <Typography paragraph>
-                Essa é a descrição do card
+                {props.description}
           </Typography>
           {/* <Typography paragraph>
           It is currently the fourth-largest automotive brand in the United States and is a division of General Motors. Chevrolet has become one of America’s most iconic brands, producing reliable and stylish cars, trucks, and SUVs for over a century. Its models range from the economical Spark to the luxurious Corvette.
@@ -104,6 +101,8 @@ export default function RecipeReviewCard(props: CardProps) {
           </Typography> */}
         </CardContent>
       </Collapse>
+      </>
+}
     </Card>
     </div>
   );
