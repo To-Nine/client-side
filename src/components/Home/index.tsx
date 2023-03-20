@@ -21,6 +21,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import GroupsIcon from '@mui/icons-material/Groups';
 import { color } from '@mui/system';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { Card } from '@mui/material';
@@ -69,17 +70,17 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
-    
+
 
 
     '& .MuiDrawer-paper': {
       display: 'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'white',
-    border:'none',
-    marginLeft:'3%'
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      border: 'none',
+      marginLeft: '3%'
       // position: 'relative',
       // whiteSpace: 'nowrap',
       // width: drawerWidth,
@@ -113,9 +114,9 @@ function DashboardContent() {
 
   return (
     <ThemeProvider theme={mdTheme} >
-      <Box sx={{ display: 'flex', maxHeight:'80vh'}}>
+      <Box sx={{ display: 'flex', maxHeight: '80vh' }}>
         <CssBaseline />
-        <AppBar  open={open} sx={{height:'8vh', backgroundColor:'#00929B'}}>
+        <AppBar open={open} sx={{ height: '8vh', backgroundColor: '#00929B' }}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
@@ -140,10 +141,15 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              <img src={Logo}/>
+              <img src={Logo} />
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge color="secondary">
+                <GroupsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton color="inherit">
+              <Badge badgeContent={7} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -158,29 +164,29 @@ function DashboardContent() {
               px: [1],
             }}
           >
-            {/* <IconButton onClick={toggleDrawer}>
+            <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
-            </IconButton> */}
-          {/* </Toolbar> */}
-          {/* <Divider /> */}
-          <div style={{border:'1px solid black', borderRadius:'12px', backgroundColor:'#056E75'}}>
-          <List component="nav"
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-            alignContent:'center',
-            justifyItems:'center',
-            gap:'30',
+            </IconButton>
+          </Toolbar>
+          <Divider /> */}
+          <div style={{ border: '1px solid black', borderRadius: '12px', backgroundColor: '#056E75' }}>
+            <List component="nav"
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                alignContent: 'center',
+                justifyItems: 'center',
+                gap: '30',
 
-          }
-          }
-          >
-            {mainListItems}
-            {/* <Divider sx={{ my: 1 }} />
-            {secondaryListItems} */}
-          </List>
+              }
+              }
+            >
+              {mainListItems}
+              {/* <Divider sx={{ my: 1 }} />
+              {secondaryListItems} */}
+            </List>
           </div>
         </Drawer>
         <Box
@@ -199,72 +205,74 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 0, mb: 0 }}>
             <Grid container spacing={7}>
-            <Grid item  md={4} ><Divider sx={{
-                    backgroundColor:'green',
-                    borderBottomWidth: 3,
-                    marginBottom:0,
-                  }}/><Paper
-                 sx={{
-                  padding:'3%',
+              <Grid item md={4} ><Divider sx={{
+                backgroundColor: 'green',
+                borderBottomWidth: 3,
+                marginBottom: 0,
+              }} />
+                <Paper
+                  sx={{
+                    padding: '3%',
+                    display: 'flex',
+                    maxHeight: 50,
+                    maxWidth: 350,
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div style={{ marginLeft: '3%', display: 'flex', justifyContent: 'flex-start' }}>
+                    Tarefa
+
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', marginRight: '2%' }}>
+                    <FormDialog icon={<ControlPointIcon />} />
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item md={4} >
+                <Divider sx={{
+                  backgroundColor: 'red',
+                  borderBottomWidth: 3
+                }} /><Paper
+                  sx={{
+                    padding: '3%',
+                    display: 'flex',
+                    maxHeight: 50,
+                    maxWidth: 350,
+                    justifyContent: 'space-between'
+                  }}
+                >
+
+                  <div style={{ marginLeft: '3%', display: 'flex', justifyContent: 'flex-start' }}>
+                    Lembrete
+
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', marginRight: '2%' }}>
+                    <FormDialog icon={<ControlPointIcon />} />
+                  </div>
+                </Paper></Grid>
+              <Grid item md={4} ><Divider sx={{
+                backgroundColor: 'purple',
+                borderBottomWidth: 3,
+
+              }} /><Paper
+                sx={{
+                  padding: '3%',
                   display: 'flex',
                   maxHeight: 50,
                   maxWidth: 350,
-                  justifyContent:'space-between'
+                  justifyContent: 'space-between'
                 }}
-                >
-                  <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
-                  Tarefa
+              >
+                  <div style={{ marginLeft: '3%', display: 'flex', justifyContent: 'flex-start' }}>
+                    Evento
 
                   </div>
-                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                    <FormDialog icon={<ControlPointIcon/>}/>
-                  </div>
-                </Paper></Grid>
-                <Grid item  md={4} >
-                <Divider sx={{
-                    backgroundColor:'red',
-                    borderBottomWidth: 3
-                  }}/><Paper
-                  sx={{
-                    padding:'3%',
-                    display: 'flex',
-                    maxHeight: 50,
-                    maxWidth: 350,
-                    justifyContent:'space-between'
-                  }}
-                >
-                  
-                   <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
-                  Lembrete
+                  <div style={{ display: 'flex', alignItems: 'center', marginRight: '2%' }}>
+                    <FormDialog icon={<ControlPointIcon />} />
 
                   </div>
-                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                 <FormDialog icon={<ControlPointIcon/>}/>
-                  </div>
                 </Paper></Grid>
-                <Grid item  md={4} ><Divider sx={{
-                    backgroundColor:'purple',
-                    borderBottomWidth: 3,
-                    
-                  }}/><Paper
-                  sx={{
-                    padding:'3%',
-                    display: 'flex',
-                    maxHeight: 50,
-                    maxWidth: 350,
-                    justifyContent:'space-between'
-                  }}
-                >
-                  <div style={{marginLeft:'3%',display:'flex', justifyContent:'flex-start'}}>
-                  Evento
-
-                  </div>
-                  <div style={{display:'flex', alignItems:'center', marginRight:'2%'}}>
-                  <FormDialog icon={<ControlPointIcon/>}/>
-                  
-                  </div>
-                </Paper></Grid>
-              <Grid item marginTop={0}  md={4} >
+              <Grid item marginTop={0} md={4} >
                 {/* <Paper
                   sx={{
                     
@@ -274,26 +282,26 @@ function DashboardContent() {
                     minWidth: 350
                   }}
                 > */}
-                  {/* <Chart /> */}
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
-                  <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word"/>
+                {/* <Chart /> */}
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
+                <RecipeReviewCard type='tarefa' title="Finalizar o trabalho de big data" description="Finalizar até o dia 13 o ppt e o word" />
                 {/* </Paper> */}
               </Grid>
               <Grid item md={4} >
@@ -305,29 +313,29 @@ function DashboardContent() {
                     minWidth: 350
                   }} */}
                 {/* > */}
-                 <RecipeReviewCard type='lembrete' title="Levar o cachorro para passear" description="Levar o bob para passear"/>
-                  {/* <Deposits /> */}
+                <RecipeReviewCard type='lembrete' title="Levar o cachorro para passear" description="Levar o bob para passear" />
+                {/* <Deposits /> */}
                 {/* </Paper> */}
               </Grid>
               <Grid item md={4}>
                 {/* <Paper 
                 sx={{display: 'flex', flexDirection: 'column', minHeight: 240, minWidth: 350 }}
                 > */}
-                  {/* <Orders /> */}
-                  <RecipeReviewCard type='evento' title="RockInRio" description=""/>
-                  <RecipeReviewCard type='evento' title="Culto evangélico" description="louvor e rock"/>
+                {/* <Orders /> */}
+                <RecipeReviewCard type='evento' title="RockInRio" description="" />
+                <RecipeReviewCard type='evento' title="Culto evangélico" description="louvor e rock" />
                 {/* </Paper> */}
               </Grid>
             </Grid>
           </Container>
-          
+
         </Box>
-        
+
       </Box>
-      <div style={{ display:'flex', justifyContent:'flex-end', position:'fixed',right: '5%' }}>
-            <Avatar sx={{ bgcolor: 'grey', scale:'1.3'}}  aria-label="recipe">
-              <QuestionMarkIcon/>
-            </Avatar>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', position: 'fixed', right: '5%' }}>
+        <Avatar sx={{ bgcolor: 'grey', scale: '1.3' }} aria-label="recipe">
+          <QuestionMarkIcon />
+        </Avatar>
       </div>
     </ThemeProvider>
   );
