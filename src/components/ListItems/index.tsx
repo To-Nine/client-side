@@ -9,42 +9,56 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Tooltip from '@mui/material/Tooltip';
+import Dashboard from '../Home';
 
 export const mainListItems = (
   <React.Fragment>
-    <div style={{display:'flex', flexDirection:'column', gap:'5vh'}}>
-    <ListItemButton>
-        <DashboardIcon />
-      <ListItemText />
-    </ListItemButton>
-    <ListItemButton>
-        <DashboardIcon />
-      <ListItemText />
-    </ListItemButton>
-    <ListItemButton>
-      {/* <ListItemIcon> */}
-        <ShoppingCartIcon />
-      {/* </ListItemIcon> */}
-      <ListItemText  />
-    </ListItemButton>
-    <ListItemButton>
-      {/* <ListItemIcon> */}
-        <PeopleIcon />
-      {/* </ListItemIcon> */}
-      <ListItemText />
-    </ListItemButton>
-    <ListItemButton>
-      {/* <ListItemIcon> */}
-        <BarChartIcon />
-      {/* </ListItemIcon> */}
-      <ListItemText  />
-    </ListItemButton>
-    <ListItemButton>
-      {/* <ListItemIcon> */}
-        <LayersIcon />
-      {/* </ListItemIcon> */}
-      <ListItemText/>
-    </ListItemButton>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '6vh' }}>
+
+      <ListItemButton>
+      <Tooltip title='Visão Geral'>
+          <DashboardIcon />
+        </Tooltip>
+        <ListItemText  />
+      </ListItemButton>
+
+      <ListItemButton>
+      <Tooltip title='2'>
+          <BarChartIcon />
+        </Tooltip>
+        <ListItemText />
+      </ListItemButton>
+
+      <ListItemButton>
+      <Tooltip title='3'>
+          <LayersIcon />
+        </Tooltip>
+        <ListItemText />
+      </ListItemButton>
+
+      <ListItemButton>
+      <Tooltip title='4'>
+          <PeopleIcon />
+        </Tooltip>
+        <ListItemText />
+      </ListItemButton>
+
+      <ListItemButton>
+      <Tooltip title='5'>
+          <ShoppingCartIcon />
+        </Tooltip>
+        <ListItemText />
+      </ListItemButton>
+
+      <ListItemButton>
+        <Tooltip title='Sair'>
+          <LogoutIcon />
+        </Tooltip>
+        <ListItemText />
+      </ListItemButton>
+
     </div>
   </React.Fragment>
 );
@@ -53,23 +67,27 @@ export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
     </ListSubheader>
+
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText  />
+      <ListItemText />
     </ListItemButton>
+
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText  />
+      <ListItemText />
     </ListItemButton>
+
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText  />
+      <ListItemText />
     </ListItemButton>
+
   </React.Fragment>
 );
